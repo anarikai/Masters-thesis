@@ -32,7 +32,7 @@ model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 
 cm = confusion_matrix(y_test, y_pred)
-sns.heatmap(cm, annot=True, fmt='d').set_title('Darknet 2020, logisticRegression')
+sns.heatmap(cm, annot=True, fmt='d').set_title('Logistic regression confusion matrix (0 = Non-Tor, 1 = NonVPN , 2 = Tor, 3 = VPN)')
 plt.show()
 
 # Evaluate the performance of the model

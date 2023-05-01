@@ -71,7 +71,7 @@ rfc.fit(X_train, y_train)
 y_pred = rfc.predict(X_test)
 
 cm = confusion_matrix(y_test, y_pred)
-sns.heatmap(cm, annot=True, fmt='d').set_title('Darknet dataset confusion matrix(0 = Non-Tor, 1 = NonVPN , 2 = Tor, 3 = VPN)')
+sns.heatmap(cm, annot=True, fmt='d').set_title('Random forest confusion matrix (0 = Non-Tor, 1 = NonVPN , 2 = Tor, 3 = VPN)')
 plt.show()
 
 print(classification_report(y_test,y_pred))

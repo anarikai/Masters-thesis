@@ -70,7 +70,7 @@ print("Confusion Matrix:")
 print(confusion_matrix(y_val, predictions))
 
 cm = confusion_matrix(y_val, predictions)
-sns.heatmap(cm, annot=True, fmt='d').set_title('Gradient boosting classifier')
+sns.heatmap(cm, annot=True, fmt='d').set_title('Gradient boosting confusion matrix (0 = Non-Tor, 1 = NonVPN , 2 = Tor, 3 = VPN)')
 plt.show()
 
 print("Classification Report")

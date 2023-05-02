@@ -11,13 +11,16 @@ from sklearn.metrics import confusion_matrix
 # Load the dataset
 data = pd.read_csv('darknet2020.csv')
 
+# Drop unnecessary columns
 drop_columns = ['Flow ID', 'Src IP', 'Src Port', 'Dst IP', 'Dst Port', 'Timestamp']
 data.drop(labels=drop_columns, axis=1, inplace=True)
 
+# Transform Label and Label.1 columns to numbers with LabelEncoder
 label_encoder = LabelEncoder()
 data['Label'] = label_encoder.fit_transform(data['Label'])
 data['Label.1'] = label_encoder.fit_transform(data['Label.1'])
 
+# Get rid of any NaN and inf values in the dataset
 data.fillna(value=0.0, inplace=True)
 data = data[~data.isin([np.nan, np.inf, -np.inf]).any(1)]
 
